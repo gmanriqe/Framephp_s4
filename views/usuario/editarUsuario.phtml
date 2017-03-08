@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<div class="container">
+	<h1> Editar Registro</h1>
+	<form class="form-signin" action="<?php echo BASE_URL?>usuario/editar" method="POST">
+			<input type="text" placeholder="<?php echo _('USUARIO')?>" class="form-control" name="idusuario" value="<?php echo $this-> dataUsuario-> idusuario?>"><br>
+		   	<input type="text" placeholder="<?php echo _('NOMBRE')?>" class="form-control" name="nombre" value="<?php echo $this-> dataUsuario-> nombre?>"><br>
+ 		   	<input type="text" placeholder="<?php echo _('EMAIL')?>" class="form-control" name="email" value="<?php echo $this-> dataUsuario-> email?>"><br>
+            <select class="form-control" name="rol">
+            	<option value="Administrador"  <?php echo $this-> dataUsuario-> rol == 'Administrador' ? 'selected' : ''  ?>  ><?php echo _('Administrador')?></option>
+            	<option value="Supervisor"  <?php echo $this-> dataUsuario-> rol == 'Supervisor' ? 'selected' : '' ?>  ><?php echo _('Supervisor')?></option>
+            	<option value="Usuario"  <?php echo $this-> dataUsuario-> rol == 'Usuario' ? 'selected' : ''?>  ><?php echo _('Usuario')?></option>
+            </select><br/>
+            <input type="text" placeholder="<?php echo _('FECHA REGISTRO')?>" class="form-control" name="fechareg" value="<?php echo $this-> dataUsuario-> fechareg?>"><br>
+            <button class="btn text-muted text-center btn-danger" type="submit">EDITAR</button>
+    </form>
+</div>

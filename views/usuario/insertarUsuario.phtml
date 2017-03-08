@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<div class="container">
+	<h1> Registrar Usuario</h1>
+	<form class="form-signin" action="<?php echo BASE_URL?>usuario/insertar" method="POST">
+			<input type="text" placeholder="<?php echo _('USUARIO')?>" class="form-control" name="idusuario" required><br>
+		   	<input type="text" placeholder="<?php echo _('NOMBRE')?>" class="form-control" name="nombre" required><br>
+		   	<input type="password" placeholder="<?php echo _('CONTRASEÑA')?>" class="form-control" name="clave1" required><br>
+		   	<input type="password" placeholder="<?php echo _('REPITA CONTRASEÑA')?>" class="form-control" name="clave2" required><br>
+ 		   	<input type="text" placeholder="<?php echo _('EMAIL')?>" class="form-control" name="email" required><br>
+            <select class="form-control" name="rol">
+            	<option value="Administrador"  ><?php echo _('Administrador')?></option>
+            	<option value="Supervisor"  ><?php echo _('Supervisor')?></option>
+            	<option value="Usuario" ><?php echo _('Usuario')?></option>
+            </select><br/>
+            <button class="btn text-muted text-center btn-danger" type="submit">REGISTRAR</button>
+    </form>
+</div>

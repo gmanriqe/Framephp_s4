@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<div class="container">
+	<h1>Usuarios Registrados</h1>
+	<table class="table table-bordered"">
+		<thead>
+			<tr>
+				<th><?php echo _('idusuario')?></th>
+				<th><?php echo _('nombre')?></th>
+				<th><?php echo _('email')?></th>
+				<th><?php echo _('rol')?></th>
+				<th><?php echo _('fechareg')?></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php while( $reg = $this-> usuarios-> fetch_object() ):?>
+			<tr>
+				<td><?php echo $reg->idusuario?></td>
+				<td><?php echo $reg->nombre?></td>
+				<td><?php echo $reg->email?></td>
+				<td><?php echo $reg->rol?></td>
+				<td><?php echo $reg->fechareg?></td>
+				<td>
+					<a class="btn btn-warning" href="<?php echo BASE_URL?>usuario/formEditar/<?php echo $reg->idusuario?>"><?php echo _('Editar')?></a>
+					<a class="btn btn-danger" href="<?php echo BASE_URL?>usuario/eliminar/<?php echo $reg->idusuario?>"><?php echo _('Eliminar')?></a>
+				</td>
+			</tr>
+			<?php endwhile;?>
+		</tbody>
+		
+	</table>
+	<a class="btn btn-primary" href="<?php echo BASE_URL?>usuario/formInsertar"><?php echo _('Nuevo')?></a>
+</div>
