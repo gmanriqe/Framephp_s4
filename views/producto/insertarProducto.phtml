@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<div class="container">
+	<h1> Registrar Producto</h1>
+	<form class="form-signin" action="<?php echo BASE_URL?>producto/insertar" method="POST">
+			<input type="text" placeholder="<?php echo _('CODIGO PRODUCTO')?>" class="form-control" name="productCode" required><br>
+		   	<input type="text" placeholder="<?php echo _('NOMBRE PRODUCTO')?>" class="form-control" name="productName" required><br>
+		   	<input type="text" placeholder="<?php echo _('LINEA PRODUCTO')?>" class="form-control" name="productLine" required><br>
+		   	<input type="text" placeholder="<?php echo _('ESCALA PRODUCTO')?>" class="form-control" name="productScale" required><br>
+ 		   	<input type="text" placeholder="<?php echo _('VENDEDOR PRODUCTO')?>" class="form-control" name="productVendor" required><br>
+ 		   	<input type="text" placeholder="<?php echo _('DESCRIPCION PRODUCTO')?>" class="form-control" name="productDescription" required><br>
+		   	<input type="text" placeholder="<?php echo _('CANTIDAD EN STOCK')?>" class="form-control" name="quantityInStock" required><br>
+		   	<input type="text" placeholder="<?php echo _('PRECIO COMPRA')?>" class="form-control" name="buyPrice" required><br>
+		   	<input type="text" placeholder="<?php echo _('MSRP')?>" class="form-control" name="MSRP" required><br>
+            
+            <button class="btn text-muted text-center btn-danger" type="submit">REGISTRAR</button>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<div class="container">
+	<h1>Lista de Productos</h1>
+	<div class="table-responsive">
+		<a class="btn btn-primary" href="<?php echo BASE_URL?>producto/formInsertar">Nuevo</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><?php echo _('ProductCode')?></th>
+					<th><?php echo _('ProductName')?></th>
+					<th><?php echo _('ProductLine')?></th>
+					<th><?php echo _('ProductScale')?></th>
+					<th><?php echo _('ProductVendor')?></th>
+					<th><?php echo _('ProductDescription')?></th>
+					<th><?php echo _('QuantityInStock')?></th>
+					<th><?php echo _('BuyPrice')?></th>
+					<th><?php echo _('MSRP')?></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php while( $reg = $this-> dataProducto-> fetch_object()):?>
+				<tr>
+					<td><?php echo $reg -> productCode ?></td>
+					<td><?php echo $reg -> productName ?></td>
+					<td><?php echo $reg -> productLine ?></td>
+					<td><?php echo $reg -> productScale ?></td>
+					<td><?php echo $reg -> productVendor ?></td>
+					<td><?php echo $reg -> productDescription ?></td>
+					<td><?php echo $reg -> quantityInStock ?></td>
+					<td><?php echo $reg -> buyPrice ?></td>
+					<td><?php echo $reg -> MSRP ?></td>
+					<td>
+						<a class="btn btn-danger " href="<?php echo BASE_URL?>producto/formEditar/<?php echo $reg-> productCode?>"><?php echo _('Editar')?></a> 
+						<a class="btn btn-warning " href="<?php echo BASE_URL?>producto/eliminar/<?php echo $reg-> productCode?>"><?php echo _('Eliminar')?></a>
+					</td>
+				</tr>
+			<?php endwhile;?>
+			</tbody>
+		</table>
+	</div>
+</div>
